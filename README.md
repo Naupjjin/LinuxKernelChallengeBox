@@ -2,7 +2,7 @@
 
 - PoW 
 - input CTFd token and verify
-- gen token = AES(CTFd.nonce.random_string, "TomorinIsCute")
+- gen token = AES(CTFd.random_string, "TomorinIsCute")
 - Upload your exploit
 - Start your qemu and bind your exploit to qemu
 - run qemu and run your exploit
