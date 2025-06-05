@@ -9,17 +9,19 @@
 - after some seconds read result and show
 - after some seconds kill all process about qemu
 
+
 ```
-web
-|_ app.py (main)
-|_ templates (web front)
-|_ static
-|_ users
-	|_ user_token
-		|_ exploit
-		|_ result
-challenge
-|_ run.sh 
-|_ cpio 
-|_ bzimage
+├── docker-compose.yml
+├── Dockerfile
+├── README.md
+├── solver
+│   └── solve_pow.py
+└── src
+    ├── app.py
+    ├── challenge
+    │   ├── bzImage
+    │   ├── initramfs.cpio.gz
+    │   └── run.sh
+    └── PoW
+        └── PoW.py
 ```
