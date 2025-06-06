@@ -12,6 +12,7 @@ def verify_pow(prefix, answer, difficulty):
     if digest.startswith('0' * difficulty):
         print("[+] Correct PoW!")
     else:
-        print("[-] Incorrect PoW.")        
+        print("[-] Incorrect PoW.")
+        exit()        
 
 
