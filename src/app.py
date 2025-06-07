@@ -1,15 +1,12 @@
 import PoW.PoW as PoW_mod
+import usertoken.gen_token as gentoken_mod
+import usertoken.verify_ctfd as verify_ctfd_mod
 import requests
+import os
 
-SECRET_KEY = "TomorinIsCute"
-PATH = ""
+BASE_PATH = "CTFuser/"
 EXPLOIT_URL = ""
 
-def PoW_handler():
-
-    PREFIX = PoW_mod.generate_prefix()
-    ANSWER = input("[!] Your Answer : ")
-    PoW_mod.verify_pow(PREFIX, ANSWER, difficulty = 6)
 
 def get_exploit_handler():
     ### Need edit
@@ -27,4 +24,22 @@ def get_exploit_handler():
         print(f"[-] Failed to download ELF: {e}")
         return None
 
-PoW_handler()
+# PoW
+
+PREFIX = PoW_mod.generate_prefix()
+ANSWER = input("[!] Your Answer : ")
+PoW_mod.verify_pow(PREFIX, ANSWER, difficulty = 6)
+
+# gen USER token
+
+USER_CTFD_TOKEN = input("[!] Input your CTFd token : ")
+verify_ctfd_mod.verify_ctfd_token(USER_CTFD_TOKEN) # This mod need dev
+
+USER_TOKEN = gentoken_mod.gen_token(USER_CTFD_TOKEN)
+
+# create user dir
+
+TARGET_DIR = os.path.join(BASE_PATH, USER_TOKEN)
+
+os.makedirs(TARGET_DIR, exist_ok=True)
+
