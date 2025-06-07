@@ -6,8 +6,8 @@ then
     echo "No exploit supplied"
     # No exploit executable supplied
     qemu-system-x86_64 \
-        -kernel ./bzImage \
-        -initrd ./initramfs.cpio.gz \
+        -kernel ./challenge/bzImage \
+        -initrd ./challenge/initramfs.cpio.gz \
         -cpu qemu64,+smap,+smep \
         -smp 1 \
         -m 1G \
@@ -20,8 +20,8 @@ else
     echo "Exploit supplied"
     # Exploit executable supplied as first argument
     qemu-system-x86_64 \
-        -kernel ./bzImage \
-        -initrd ./initramfs.cpio.gz \
+        -kernel ./challenge/bzImage \
+        -initrd ./challenge/initramfs.cpio.gz \
         -cpu qemu64,+smap,+smep \
         -smp 1 \
         -m 1G \

@@ -58,7 +58,14 @@ if NEED_UPLOAD_EXPLOIT == "y":
     output_path = os.path.join(TARGET_DIR, "exploit")
     with open(output_path, "wb") as f:
         f.write(response.content)
-else:
-    pass
 
-# Start Qemu env
+    print("[!] Wait ... your challenge will start ...")
+    try:
+        subprocess.run(["./challenge/run.sh", output_path])
+    except Exception as e:
+        print(f"[X] {e}")
+else:
+    try:
+        subprocess.run(["./challenge/run.sh"])
+    except Exception as e:
+        print(f"[X] {e}")
