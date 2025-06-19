@@ -1,12 +1,12 @@
 version: '3.3'
 
 services:
-  mygo-driver:
+  pwn-no-549:
     privileged: true
     build:
         context: .
     ports:
-      - '25000:25000'
+      - '13370:13370'
     restart: unless-stopped
     deploy:
       resources:

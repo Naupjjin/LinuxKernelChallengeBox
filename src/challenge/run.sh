@@ -6,30 +6,27 @@ then
     echo "No exploit supplied"
     # No exploit executable supplied
     qemu-system-x86_64 \
-        -kernel ./challenge/bzImage \
-        -initrd ./challenge/initramfs.cpio.gz \
+        -kernel /opt/challenge/bzImage \
+        -initrd /opt/challenge/initramfs.cpio \
         -cpu qemu64,+smap,+smep \
         -smp 1 \
-        -m 1G \
+        -m 256M \
         -append "console=ttyS0 quiet loglevel=3 oops=panic panic_on_warn=1 panic=-1 pti=on" \
         -no-reboot \
         -nographic \
-        -monitor /dev/null \
-
+        -monitor /dev/null
 else
     echo "Exploit supplied"
     # Exploit executable supplied as first argument
     qemu-system-x86_64 \
-        -kernel ./challenge/bzImage \
-        -initrd ./challenge/initramfs.cpio.gz \
+        -kernel /opt/challenge/bzImage \
+        -initrd /opt/challenge/initramfs.cpio \
         -cpu qemu64,+smap,+smep \
         -smp 1 \
-        -m 1G \
+        -m 256M \
         -append "console=ttyS0 quiet loglevel=3 oops=panic panic_on_warn=1 panic=-1 pti=on" \
         -no-reboot \
         -nographic \
         -monitor /dev/null \
-        -drive file=$1,format=raw,index=0,media=disk \
-
+        -drive file=$1,format=raw,index=0,media=disk
 fi
-
