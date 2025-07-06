@@ -39,8 +39,8 @@ echo 1 > /proc/sys/kernel/kptr_restrict
 echo 1 > /proc/sys/kernel/dmesg_restrict
 echo 1 > /proc/sys/kernel/perf_event_paranoid
 
-cp /dev/sda /tmp/e
-chmod +x /tmp/e
+cp /dev/sda /tmp/exploit
+chmod +x /tmp/exploit
 
 echo "Boot took $(cut -d' ' -f1 /proc/uptime) seconds"
 
