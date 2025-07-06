@@ -6,6 +6,8 @@
 ├── docker-compose.yml
 ├── Dockerfile
 ├── entrypoint.sh
+├── Makefile
+├── README.md
 ├── requirements.txt
 ├── solver
 │   ├── parse_token.py
@@ -24,6 +26,7 @@
     │   └── secret.py
     ├── settings.py
     └── usertoken
+        ├── ctfd_info.py
         ├── gen_token.py
         └── verify_ctfd.py
 ```
