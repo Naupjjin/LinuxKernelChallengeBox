@@ -1,7 +1,7 @@
 version: '3.3'
 
 services:
-  pwn-no-549:
+  pwn-kernel-box:
     privileged: true
     build:
         context: .
