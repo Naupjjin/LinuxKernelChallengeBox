@@ -27,11 +27,11 @@ if NEED_POW_FUNCTION:
 
 if NEED_CTFD_TOKEN_FUNCTION:
     USER_CTFD_TOKEN = input("[!] Input your CTFd token : ")
-    verify_ctfd_mod.verify_ctfd_token(USER_CTFD_TOKEN) # This mod need dev
+    verify_token = verify_ctfd_mod.verify_ctfd_token(USER_CTFD_TOKEN) # This mod need dev
 else:
-    USER_CTFD_TOKEN = ''.join(secrets.choice(string.ascii_letters + string.digits) for _ in range(16))
+    verify_token = ''.join(secrets.choice(string.ascii_letters + string.digits) for _ in range(16))
 
-USER_TOKEN = gentoken_mod.gen_token(USER_CTFD_TOKEN)
+USER_TOKEN = gentoken_mod.gen_token(verify_token)
 
 # create user dir
 

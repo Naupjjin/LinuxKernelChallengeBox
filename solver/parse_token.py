@@ -4,7 +4,7 @@ import binascii
 
 TOKEN_SECRET_KEY = b"TomorinIsCute123" 
 
-USER_TOKEN = "4b1e33920656a5d5bf1b81c8344dbd27179f16826a84ed9a77eba79e126f2260ed688b47566c3c511bcb75651c3f55d878d6ec600d168f5faae5d4e3522791a1"  
+USER_TOKEN = "9aab97dca69a377a0c208cb88efeb1db138a5cdeb9695c0cdfe810d6e7df00e5ca070c45437f566b1e1bf3a4f3eb"
 
 def parse_token(token_hex):
 
@@ -15,11 +15,9 @@ def parse_token(token_hex):
     aesgcm = AESGCM(TOKEN_SECRET_KEY)
     plaintext = aesgcm.decrypt(nonce, ciphertext, None)
 
-    decoded = plaintext.decode()
-    ctfd_token, iso_time = decoded.split("|", 1)
+    p = plaintext.decode()
 
-    return ctfd_token, iso_time
+    return p
 
-ctfd_token, timestamp = parse_token(USER_TOKEN)
+ctfd_token = parse_token(USER_TOKEN)
 print("CTFd Token:", ctfd_token)
-print("Time:", timestamp)
