@@ -1,6 +1,1 @@
-import os
-from dotenv import load_dotenv
-
-load_dotenv(dotenv_path="usertoken/ctfd_info.env")
-
-CTFd_url = os.getenv("CTFD_URL")
+CTFd_URL = "http://173.249.194.251:8000/"

@@ -7,7 +7,7 @@ then
     # No exploit executable supplied
     qemu-system-x86_64 \
         -kernel /opt/challenge/bzImage \
-        -initrd /opt/challenge/initramfs.cpio \
+        -initrd /opt/challenge/initramfs.cpio.gz \
         -cpu qemu64,+smap,+smep \
         -smp 1 \
         -m 256M \
@@ -20,7 +20,7 @@ else
     # Exploit executable supplied as first argument
     qemu-system-x86_64 \
         -kernel /opt/challenge/bzImage \
-        -initrd /opt/challenge/initramfs.cpio \
+        -initrd /opt/challenge/initramfs.cpio.gz \
         -cpu qemu64,+smap,+smep \
         -smp 1 \
         -m 256M \
