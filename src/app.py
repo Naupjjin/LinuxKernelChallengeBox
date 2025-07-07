@@ -41,7 +41,10 @@ os.makedirs(TARGET_DIR, exist_ok=True)
 # Get your exploit
 
 print("[!] Start !!!!!")
-NEED_UPLOAD_EXPLOIT = input("NEED_UPLOAD_EXPLOIT (y/n)").strip()
+NEED_UPLOAD_EXPLOIT = input("[?] NEED_UPLOAD_EXPLOIT (y/n)").strip()
+
+print("[!] Give me your exploit url, you can run **/tmp/exploit**")
+
 if NEED_UPLOAD_EXPLOIT == "y":
     EXPLOIT_URL = input("[!] Input your exploit url : ").strip()
     if not is_valid_url(EXPLOIT_URL):
