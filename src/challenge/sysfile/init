@@ -18,12 +18,17 @@ chmod 644 /etc/group
 
 adduser ctf --disabled-password 2>/dev/null
 
+echo "naupCTF{This_is_flag_you_are_master_of_pwn!!!_$(echo -n "$(date +%s)_mysecret" | sha256sum | cut -d ' ' -f1)}" > /flag.txt
+
 chown -R root:root /
 chmod 700 -R /root
 chmod 600 -R /flag.txt
 chown ctf:ctf /home/ctf
 chmod 777 /tmp
 chmod 755 /dev
+
+chown -R root:root /
+chmod 700 /init
 
 mount -t proc -o nodev,noexec,nosuid proc /proc
 mount -t sysfs -o nodev,noexec,nosuid sysfs /sys
@@ -39,8 +44,8 @@ echo 1 > /proc/sys/kernel/kptr_restrict
 echo 1 > /proc/sys/kernel/dmesg_restrict
 echo 1 > /proc/sys/kernel/perf_event_paranoid
 
-cp /dev/sda /tmp/e
-chmod +x /tmp/e
+cp /dev/sda /tmp/exploit
+chmod +x /tmp/exploit
 
 echo "Boot took $(cut -d' ' -f1 /proc/uptime) seconds"
 
