@@ -4,7 +4,7 @@ import binascii
 
 TOKEN_SECRET_KEY = b"TomorinIsCute123" 
 
-USER_TOKEN = "9aab97dca69a377a0c208cb88efeb1db138a5cdeb9695c0cdfe810d6e7df00e5ca070c45437f566b1e1bf3a4f3eb"
+USER_TOKEN = "fd87866654018d4c75b32a02e38d074fc1f23ce2fc4845f0112889626c061b1fdef67fea94d69e72fe5764733f048218000c5aa04ac15054b7555bd43e52df94d9b6d488b40f767bb5f117ce30cfcc"
 
 def parse_token(token_hex):
 
