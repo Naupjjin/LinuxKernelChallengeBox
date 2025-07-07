@@ -34,7 +34,7 @@ def verify_ctfd_token(ctfd_token):
     user_email = json_data["data"]["email"]
 
     print("[!] Success to verify your token **{}**!".format(ctfd_token))
-
+    print("=" * 0x20)
     # use id and email generate folder name
     ctfd_token = f"{user_id}|{user_email}"
     return ctfd_token

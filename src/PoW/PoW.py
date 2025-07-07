@@ -5,6 +5,7 @@ import random
 def generate_prefix(length=16):
     print("=" * 0x20)
     prefix = ''.join(random.choices(string.ascii_letters + string.digits, k=length))
+    print("[!] solver/solve_pow.py <prefix> can caculate answer!")
     print(f"[+] Prefix: {prefix}")
     return prefix
 

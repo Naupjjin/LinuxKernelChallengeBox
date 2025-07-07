@@ -26,6 +26,7 @@ if NEED_POW_FUNCTION:
 # gen USER token
 
 if NEED_CTFD_TOKEN_FUNCTION:
+    print("[!] CTFd > settings > Access token > generate CTFd token")
     USER_CTFD_TOKEN = input("[!] Input your CTFd token : ")
     verify_token = verify_ctfd_mod.verify_ctfd_token(USER_CTFD_TOKEN) # This mod need dev
 else:
@@ -43,9 +44,8 @@ os.makedirs(TARGET_DIR, exist_ok=True)
 print("[!] Start !!!!!")
 NEED_UPLOAD_EXPLOIT = input("[?] NEED_UPLOAD_EXPLOIT (y/n)").strip()
 
-print("[!] Give me your exploit url, you can run **/tmp/exploit**")
-
 if NEED_UPLOAD_EXPLOIT == "y":
+    print("[!] Give me your exploit url, you can run **/tmp/exploit**")
     EXPLOIT_URL = input("[!] Input your exploit url : ").strip()
     if not is_valid_url(EXPLOIT_URL):
         print("[X] Invalid URL.")
