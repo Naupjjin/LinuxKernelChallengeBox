@@ -7,7 +7,7 @@ if [ -z "$1" ]
 then
     echo "No exploit supplied"
     # No exploit executable supplied
-    qemu-system-x86_64 \
+    timeout 180 qemu-system-x86_64 \
         -kernel "$CHALLENGE_DIR/bzImage" \
         -initrd "$CHALLENGE_DIR/initramfs.cpio" \
         -cpu qemu64,+smap,+smep \
@@ -20,7 +20,7 @@ then
 else
     echo "Exploit supplied"
     # Exploit executable supplied as first argument
-    qemu-system-x86_64 \
+    timeout 180 qemu-system-x86_64 \
         -kernel "$CHALLENGE_DIR/bzImage" \
         -initrd "$CHALLENGE_DIR/initramfs.cpio" \
         -cpu qemu64,+smap,+smep \
