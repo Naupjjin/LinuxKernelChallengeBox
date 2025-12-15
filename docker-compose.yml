@@ -2,7 +2,6 @@ version: '3.3'
 
 services:
   pwn-kernel-box:
-    privileged: true
     build:
         context: .
     ports:
